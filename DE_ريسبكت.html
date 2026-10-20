@@ -1,0 +1,299 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>DE|ريسبكت</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --o:#ffb067; --o2:#ff9a3d; --o-soft:#fff1e2; --k:#0d0d0d; --k2:#1a1a1a; --g:#7a6a5a;
+  --r:20px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--k);color:#fff;font-family:"Tajawal","Segoe UI",Tahoma,system-ui,sans-serif}
+body{min-height:100vh;padding-bottom:84px}
+header{
+  position:sticky;top:0;z-index:10;background:var(--k);
+  padding:calc(env(safe-area-inset-top) + 14px) 18px 12px;
+  display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--o)
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{
+  width:44px;height:44px;border-radius:12px;background:var(--k2);border:2px solid var(--o);
+  display:grid;place-items:center;font-weight:900;font-size:20px;color:var(--o);letter-spacing:1px;font-family:Arial,sans-serif
+}
+.logo b{font-size:19px}.logo b span{color:var(--o)}
+#bell{background:var(--o);color:var(--k);border:0;border-radius:12px;padding:9px 12px;font-weight:700;font-size:13px;font-family:inherit;cursor:pointer}
+main{padding:18px}
+.page{display:none;animation:in .25s}.page.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2{margin:6px 0 14px;font-size:22px}h2::after{content:"";display:block;width:46px;height:4px;background:var(--o);border-radius:4px;margin-top:6px}
+.hero{background:linear-gradient(135deg,var(--o),var(--o-soft));color:var(--k);border-radius:var(--r);padding:22px;margin-bottom:16px}
+.hero h1{margin:0 0 6px;font-size:26px}.hero p{margin:0;font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--o-soft);color:var(--k);border:0;border-radius:var(--r);padding:18px 10px;font-weight:800;font-size:16px;font-family:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px}
+.tile i{font-style:normal;font-size:28px}
+.tile:active,.card.tap:active{transform:scale(.97)}
+.card{background:var(--k2);border:1px solid #2b2b2b;border-right:4px solid var(--o);border-radius:16px;padding:16px;margin-bottom:12px}
+.card h3{margin:0 0 6px;color:var(--o);font-size:17px}.card p{margin:0;line-height:1.7;color:#e8e8e8}
+.card small{color:var(--g)}
+.num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--o);color:var(--k);font-weight:900;margin-left:8px;font-size:14px}
+a.btn,button.btn{display:inline-block;background:var(--o);color:var(--k);border:0;border-radius:12px;padding:11px 16px;font-weight:800;font-size:15px;font-family:inherit;text-decoration:none;cursor:pointer}
+button.ghost{background:transparent;color:var(--o);border:2px solid var(--o)}
+form label{display:block;margin:12px 0 6px;font-weight:700}
+input,textarea,select{width:100%;background:#fff8f0;color:var(--k);border:2px solid transparent;border-radius:12px;padding:12px;font-weight:500;font-size:15px;font-family:inherit}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--o)}
+textarea{min-height:90px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.chip{background:var(--k2);border:2px solid #333;color:#fff;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer}
+.chip.on{background:var(--o);color:var(--k);border-color:var(--o)}
+.crew{display:flex;align-items:center;gap:12px}
+.av{width:48px;height:48px;border-radius:50%;background:var(--o);color:var(--k);display:grid;place-items:center;font-weight:900;font-size:20px}
+.tag{font-size:12px;background:var(--o);color:var(--k);padding:2px 9px;border-radius:99px;font-weight:800;margin-right:6px}
+#chat{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;max-height:52vh;overflow:auto}
+.msg{max-width:85%;padding:11px 14px;border-radius:16px;line-height:1.6}
+.msg.me{align-self:flex-start;background:var(--o);color:var(--k)}
+.msg.bot{align-self:flex-end;background:var(--k2);border:1px solid #333}
+.row{display:flex;gap:8px}.row input{flex:1}
+nav{
+  position:fixed;bottom:0;left:0;right:0;background:var(--k);border-top:2px solid var(--o);display:flex;
+  padding:6px 4px calc(env(safe-area-inset-bottom) + 6px);z-index:10
+}
+nav button{flex:1;background:none;border:0;color:#aaa;font-weight:700;font-size:11px;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;cursor:pointer}
+nav button i{font-style:normal;font-size:20px}
+nav button.on{color:var(--o)}
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:var(--o);color:var(--k);padding:11px 18px;border-radius:12px;font-weight:800;z-index:20;display:none}
+
+
+:root{color-scheme:dark}
+body{background:#0d0d0d;color:#fff;padding-block:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#0d0d0d;z-index:30}
+header{top:env(safe-area-inset-top,0px);padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav{padding:6px max(4px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 6px) max(4px,env(safe-area-inset-left,0px))}
+.toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+.card,.hero,.tile{min-width:0;overflow-wrap:anywhere}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ffb067;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.page{animation:none}}
+
+</style>
+<div dir="rtl" lang="ar" id="root">
+<header>
+  <div class="logo"><div class="logo-mark">DE</div><b>DE<span>|</span>ريسبكت</b></div>
+</header>
+
+<main>
+  <section id="home" class="page on">
+    <div class="hero"><h1>أهلاً في DE|ريسبكت</h1><p id="tag"></p></div>
+    <div class="grid" id="tiles"></div>
+  </section>
+
+  <section id="rules" class="page"><h2>القوانين</h2><div id="rulesList"></div></section>
+
+  <section id="news" class="page"><h2>الأخبار والإعلانات</h2><div id="newsList"></div></section>
+
+  <section id="apply" class="page">
+    <h2>التقديمات</h2>
+    <div class="chips" id="jobChips"></div>
+    <form id="form">
+      <label>اسمك في روبلوكس</label><input id="fRoblox" required>
+      <label>اسم الشخصية (RP)</label><input id="fChar" required>
+      <label>العمر</label><input id="fAge" type="number" min="1" required>
+      <label>الديسكورد (يوزر)</label><input id="fDisc" required>
+      <label>ليش تبي تنضم؟</label><textarea id="fWhy" required></textarea>
+      <label>خبرتك في الرول بلاي</label><textarea id="fExp"></textarea>
+      <p style="margin-top:14px"><button class="btn" type="submit">إرسال التقديم</button></p>
+    </form>
+  </section>
+
+  <section id="staff" class="page"><h2>الإدارة العليا</h2><div id="adminList"></div></section>
+
+  <section id="creators" class="page">
+    <h2>صناع المحتوى</h2>
+    <div id="creatorList"></div>
+    <div class="card"><h3>تبي تصير صانع محتوى؟</h3><p>قدّم عندنا وانضم لقائمة صناع محتوى السيرفر.</p>
+      <p style="margin-top:12px"><button class="btn" id="creatorApply">قدّم كصانع محتوى</button></p></div>
+  </section>
+
+  <section id="ai" class="page">
+    <h2>DE – الذكاء الاصطناعي</h2>
+    <div id="chat"><div class="msg bot">أنا DE، أعرف كل شي عن السيرفر. اسألني عن القوانين أو التقديمات أو الإدارة 👋</div></div>
+    <form class="row" id="aiForm"><input id="aiIn" placeholder="اكتب سؤالك..." required><button class="btn">إرسال</button></form>
+  </section>
+</main>
+
+<nav>
+  <button data-p="home" class="on"><i>🏠</i>الرئيسية</button>
+  <button data-p="rules"><i>📜</i>القوانين</button>
+  <button data-p="news"><i>📢</i>الأخبار</button>
+  <button data-p="apply"><i>📝</i>التقديمات</button>
+  <button data-p="ai"><i>🤖</i>DE</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+
+</div>
+<script>
+// ====== بيانات التطبيق: عدّل هنا بس ======
+const APP = {
+  name: "DE|ريسبكت",
+  tagline: "سيرفر ماب أمنجرسي هاربور - روبلوكس",
+
+  // رابط ويب هوك ديسكورد لاستقبال التقديمات (اختياري). اتركه فاضي وراح تنسخ التقديم/تشاركه.
+  WEBHOOK_URL: "",
+  // رابط خدمة الذكاء الاصطناعي (اختياري). اتركه فاضي وراح يرد DE من معلومات السيرفر.
+  AI_ENDPOINT: "",
+
+  rules: [
+    { t: "الالتزام بالـ RP", d: "التزم بقواعد الرول بلاي في كل المواقف وتصرّف كشخصية حقيقية داخل القصة." },
+    { t: "احترام الجميع", d: "احترم كل اللاعبين والإدارة، ولا تسمح بالسب أو الإساءة أو التنمر." },
+    { t: "عدم الطيران من قبل الأدمن", d: "يمنع على الأدمن الطيران أثناء أداء دوره بين اللاعبين." }
+  ],
+
+  // زد عنصر جديد في أول القائمة وغيّر version عشان يوصل إشعار للمستخدمين
+  newsVersion: 1,
+  news: [
+    { date: "2026-10-20", t: "إطلاق تطبيق DE|ريسبكت", d: "أهلاً فيكم! هنا راح تلقون كل التحديثات الجديدة وإعلانات الرتب والمناسبات الخاصة داخل السيرفر." }
+  ],
+
+  jobs: [
+    { id: "police", n: "الشرطة", i: "🚓" },
+    { id: "qalaq", n: "القلق", i: "⚠️" },
+    { id: "justice", n: "العدل", i: "⚖️" },
+    { id: "yakuza", n: "الياكوزا", i: "🐉" },
+    { id: "cia", n: "CIA", i: "🕶️" },
+    { id: "acp", n: "ACP", i: "🛡️" },
+    { id: "army", n: "الجيش", i: "🎖️" },
+    { id: "oversight", n: "الرقابة", i: "👁️" }
+  ],
+
+  admins: [
+    { role: "الفاوندر", name: "راكان" },
+    { role: "الأونر", name: "مشاري" }
+  ],
+
+  creators: [
+    { n: "rtxma2", p: "Twitch", u: "https://www.twitch.tv/rtxma2" },
+    { n: "bander4503", p: "Twitch", u: "https://www.twitch.tv/bander4503" },
+    { n: "f8adam", p: "Twitch", u: "https://m.twitch.tv/f8adam/home" },
+    { n: "@ClA_0a", p: "YouTube", u: "https://www.youtube.com/@ClA_0a" }
+  ]
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function toast(m) {
+  const t = $("#toast"); t.textContent = m; t.style.display = "block";
+  clearTimeout(toast.h); toast.h = setTimeout(() => t.style.display = "none", 2600);
+}
+
+// ---------- التنقل ----------
+function go(p) {
+  document.querySelectorAll(".page").forEach(e => e.classList.toggle("on", e.id === p));
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.p === p));
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => go(b.dataset.p));
+
+// ---------- الرئيسية ----------
+$("#tag").textContent = APP.tagline;
+[["rules", "📜", "القوانين"], ["news", "📢", "الأخبار"], ["apply", "📝", "التقديمات"],
+ ["staff", "👑", "الإدارة العليا"], ["creators", "🎬", "صناع المحتوى"], ["ai", "🤖", "DE AI"]]
+  .forEach(([p, i, n]) => {
+    const b = document.createElement("button");
+    b.className = "tile"; b.innerHTML = `<i>${i}</i>${n}`; b.onclick = () => go(p);
+    $("#tiles").append(b);
+  });
+
+// ---------- القوانين ----------
+$("#rulesList").innerHTML = APP.rules.map((r, i) =>
+  `<div class="card"><h3><span class="num">${i + 1}</span>${esc(r.t)}</h3><p>${esc(r.d)}</p></div>`).join("");
+
+// ---------- الأخبار ----------
+$("#newsList").innerHTML = APP.news.map(n =>
+  `<div class="card"><h3>${esc(n.t)}</h3><p>${esc(n.d)}</p><small>${esc(n.date)}</small></div>`).join("");
+
+// ---------- الإدارة ----------
+$("#adminList").innerHTML = APP.admins.map(a =>
+  `<div class="card crew"><div class="av">${esc(a.name[0])}</div><div><h3 style="margin:0">${esc(a.name)}</h3><span class="tag">${esc(a.role)}</span></div></div>`).join("");
+
+// ---------- صناع المحتوى ----------
+$("#creatorList").innerHTML = APP.creators.map(c =>
+  `<div class="card crew"><div class="av">${esc(c.n.replace("@", "")[0].toUpperCase())}</div>
+   <div style="flex:1"><h3 style="margin:0">${esc(c.n)}</h3><span class="tag">${esc(c.p)}</span></div>
+   <a class="btn" href="${esc(c.u)}" target="_blank" rel="noopener">فتح</a></div>`).join("");
+
+// ---------- التقديمات ----------
+let job = APP.jobs[0].id;
+function chips() {
+  const all = [...APP.jobs, { id: "creator", n: "صانع محتوى", i: "🎬" }];
+  $("#jobChips").innerHTML = all.map(j =>
+    `<button type="button" class="chip ${j.id === job ? "on" : ""}" data-j="${j.id}">${j.i} ${esc(j.n)}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => { job = c.dataset.j; chips(); });
+}
+chips();
+$("#creatorApply").onclick = () => { job = "creator"; chips(); go("apply"); };
+
+$("#form").onsubmit = async e => {
+  e.preventDefault();
+  const j = [...APP.jobs, { id: "creator", n: "صانع محتوى" }].find(x => x.id === job);
+  const text =
+`📝 تقديم جديد - ${j.n}
+اسم روبلوكس: ${$("#fRoblox").value}
+اسم الشخصية: ${$("#fChar").value}
+العمر: ${$("#fAge").value}
+ديسكورد: ${$("#fDisc").value}
+سبب التقديم: ${$("#fWhy").value}
+الخبرة: ${$("#fExp").value || "-"}`;
+  if (APP.WEBHOOK_URL) {
+    try {
+      const r = await fetch(APP.WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content: text }) });
+      if (!r.ok) throw 0;
+      toast("تم إرسال التقديم ✅"); e.target.reset(); return;
+    } catch { toast("تعذر الإرسال، راح ننسخ التقديم"); }
+  }
+  if (navigator.share) { try { await navigator.share({ text }); return; } catch { } }
+  try { await navigator.clipboard.writeText(text); toast("تم نسخ التقديم، ارسله للإدارة ✅"); } catch { showText(text); }
+};
+
+// ---------- DE AI ----------
+function localAnswer(q) {
+  q = q.toLowerCase();
+  if (/قانون|قوانين|rp|ممنوع/.test(q)) return "القوانين:\n" + APP.rules.map((r, i) => `${i + 1}. ${r.t}`).join("\n");
+  if (/تقديم|وظيف|انضم|اقدم/.test(q)) return "التقديمات المتاحة: " + APP.jobs.map(j => j.n).join("، ") + "، وصانع محتوى. ادخل قسم التقديمات.";
+  if (/ادار|اونر|أونر|فاوندر|مؤسس|مالك/.test(q)) return "الإدارة العليا: " + APP.admins.map(a => `${a.role} ${a.name}`).join(" و ");
+  if (/محتوى|ستريم|تويتش|يوتيوب|صانع/.test(q)) return "صناع المحتوى: " + APP.creators.map(c => c.n).join("، ");
+  if (/خبر|تحديث|اعلان|إعلان/.test(q)) return "آخر خبر: " + APP.news[0].t + " - " + APP.news[0].d;
+  if (/سلام|هلا|مرحب/.test(q)) return "هلا والله! كيف أقدر أخدمك؟";
+  return "أنا أجاوب حالياً عن القوانين والتقديمات والإدارة وصناع المحتوى والأخبار. للأسئلة العامة لازم يربط صاحب التطبيق خدمة ذكاء اصطناعي في الإعدادات.";
+}
+function add(cls, t) {
+  const d = document.createElement("div"); d.className = "msg " + cls; d.style.whiteSpace = "pre-wrap"; d.textContent = t;
+  $("#chat").append(d); $("#chat").scrollTop = 1e9; return d;
+}
+$("#aiForm").onsubmit = async e => {
+  e.preventDefault();
+  const q = $("#aiIn").value.trim(); if (!q) return;
+  $("#aiIn").value = ""; add("me", q);
+  if (APP.AI_ENDPOINT) {
+    const w = add("bot", "...");
+    try {
+      const r = await fetch(APP.AI_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: q }) });
+      const j = await r.json(); w.textContent = j.reply || j.text || localAnswer(q);
+    } catch { w.textContent = localAnswer(q); }
+  } else add("bot", localAnswer(q));
+};
+
+
+function showText(t) {
+  let box = document.getElementById("fallbackText");
+  if (!box) {
+    box = document.createElement("textarea");
+    box.id = "fallbackText"; box.readOnly = true; box.style.marginTop = "12px";
+    document.getElementById("form").append(box);
+  }
+  box.value = t; box.focus(); box.select(); toast("انسخ النص وأرسله للإدارة");
+}
+
+</script>
+
+</body></html>
